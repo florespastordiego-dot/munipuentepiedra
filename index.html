@@ -1,0 +1,472 @@
+<html lang="es"><head>
+    <meta charset="utf-8">
+    <title>Municipalidad de Puente Piedra - Constancia de Posesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+:root {
+    --brand: #b71223;
+    --brand-dark: #8f0d1a;
+    --brand-soft: #fff1f2;
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #667085;
+    --border: #e5e7eb;
+    --success: #047857;
+    --success-bg: #ecfdf5;
+    --success-border: #a7f3d0;
+    --danger: #b91c1c;
+    --danger-bg: #fef2f2;
+    --danger-border: #fecaca;
+    --warning: #b45309;
+    --warning-bg: #fffbeb;
+    --warning-border: #fde68a;
+    --secondary: #374151;
+    --secondary-bg: #f9fafb;
+    --secondary-border: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(183, 18, 35, .10), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(17, 24, 39, .08), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    color: var(--text);
+}
+
+.qr-page {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 28px 16px;
+}
+
+.qr-shell {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 22px 55px rgba(15, 23, 42, .12);
+}
+
+.qr-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    gap: 26px;
+    align-items: center;
+    padding: 26px 30px;
+    background:
+        linear-gradient(135deg, #ffffff 0%, #ffffff 35%, #fff4f5 100%);
+    border-top: 8px solid var(--brand);
+}
+
+.qr-hero::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -120px;
+    width: 280px;
+    height: 280px;
+    background: rgba(183, 18, 35, .09);
+    border-radius: 999px;
+}
+
+.qr-logo-box {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    padding: 12px 18px;
+    background: #ffffff;
+    border: 1px solid rgba(183, 18, 35, .14);
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+}
+
+.qr-logo {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    display: block;
+}
+
+.qr-hero-content {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+.qr-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 12px;
+}
+
+.qr-hero-content h1 {
+    margin: 0;
+    color: var(--text);
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -.4px;
+}
+
+.qr-hero-content p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.qr-card {
+    padding: 28px 30px 26px;
+}
+
+.qr-status {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 14px;
+    align-items: start;
+    border-radius: 20px;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+    border: 1px solid var(--secondary-border);
+    background: var(--secondary-bg);
+    color: var(--secondary);
+}
+
+.qr-status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    margin-top: 7px;
+    background: currentColor;
+    box-shadow: 0 0 0 5px rgba(55, 65, 81, .12);
+}
+
+.qr-status h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -.2px;
+}
+
+.qr-status p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: currentColor;
+    opacity: .92;
+}
+
+.qr-status.success {
+    color: var(--success);
+    background: var(--success-bg);
+    border-color: var(--success-border);
+}
+
+.qr-status.success .qr-status-dot {
+    box-shadow: 0 0 0 5px rgba(4, 120, 87, .15);
+}
+
+.qr-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.qr-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 15px 18px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #ffffff;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.qr-row:hover {
+    border-color: rgba(183, 18, 35, .24);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, .06);
+    transform: translateY(-1px);
+}
+
+.qr-label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.qr-value {
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.qr-meta {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.qr-footer {
+    padding: 18px 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    background: #fafafa;
+}
+
+@media (max-width: 760px) {
+    .qr-page {
+        padding: 14px 10px;
+    }
+
+    .qr-shell {
+        border-radius: 20px;
+    }
+
+    .qr-hero {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 22px 18px;
+        text-align: center;
+    }
+
+    .qr-logo-box {
+        min-height: auto;
+        padding: 12px;
+    }
+
+    .qr-logo {
+        max-width: 260px;
+    }
+
+    .qr-hero-content h1 {
+        font-size: 22px;
+    }
+
+    .qr-hero-content p {
+        font-size: 13px;
+    }
+
+    .qr-card {
+        padding: 20px 16px;
+    }
+
+    .qr-status {
+        padding: 15px;
+    }
+
+    .qr-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 13px 14px;
+    }
+
+    .qr-label {
+        font-size: 11px;
+    }
+
+    .qr-value {
+        font-size: 14px;
+    }
+}
+
+@media print {
+    body {
+        background: #ffffff;
+    }
+
+    .qr-page {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .qr-shell {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .qr-row:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Animaciones visuales */
+@keyframes qrFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes qrSlideSoft {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes qrStatusPulse {
+    0% {
+        box-shadow: 0 0 0 0 currentColor;
+    }
+    70% {
+        box-shadow: 0 0 0 8px transparent;
+    }
+    100% {
+        box-shadow: 0 0 0 0 transparent;
+    }
+}
+
+.qr-shell {
+    animation: qrFadeUp .45s ease-out both;
+}
+
+.qr-hero {
+    animation: qrFadeUp .55s ease-out both;
+}
+
+.qr-logo-box {
+    animation: qrSlideSoft .55s ease-out both;
+}
+
+.qr-hero-content {
+    animation: qrFadeUp .65s ease-out both;
+}
+
+.qr-status {
+    animation: qrFadeUp .55s ease-out both;
+    animation-delay: .08s;
+}
+
+.qr-status-dot {
+    animation: qrStatusPulse 2.4s ease-out infinite;
+}
+
+.qr-row {
+    animation: qrFadeUp .45s ease-out both;
+}
+
+.qr-footer {
+    animation: qrFadeUp .55s ease-out both;
+    animation-delay: .22s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <main class="qr-page">
+        <section class="qr-shell">
+            <header class="qr-hero">
+                <div class="qr-logo-box">
+                    <img src="assets/logo_web.png?v=20260623" alt="Municipalidad Distrital de Puente Piedra" class="qr-logo">
+                </div>
+
+                <div class="qr-hero-content">
+                    <span class="qr-badge">VERIFICADO</span>
+                    <h1>CONSTANCIA DE POSESIÓN</h1>
+                    <p>Municipalidad Distrital de Puente Piedra</p>
+                </div>
+            </header>
+
+            <section class="qr-card">
+                <!-- Tarjeta de estado VÁLIDO -->
+                <div class="qr-status success">
+                    <div class="qr-status-dot"></div>
+                    <div>
+                        <h2>VÁLIDO</h2>
+                        <p>El documento se encuentra vigente.</p>
+                    </div>
+                </div>
+
+                <div class="qr-data">
+                    <!-- Vista detallada de la constancia registrada -->
+                    <div class="qr-row">
+                        <div class="qr-label">N° CONSTANCIA</div>
+                        <div class="qr-value">1026-2026</div>
+                    </div>
+                    <div class="qr-row">
+                        <div class="qr-label">N° EXPEDIENTE</div>
+                        <div class="qr-value">E-20460-2026</div>
+                    </div>
+                    <div class="qr-row">
+                        <div class="qr-label">FECHA EMISIÓN</div>
+                        <div class="qr-value">2026-09-28</div>
+                    </div>
+                    <div class="qr-row">
+                        <div class="qr-label">SOLICITANTE</div>
+                        <div class="qr-value">DIEGO FLORES PASTOR</div>
+                    </div>
+                    <div class="qr-row">
+                        <div class="qr-label">DIRECCIÓN</div>
+                        <div class="qr-value">ASOCIACIÓN LOS NEGROS DE CONDEVILLA MZ.D4 LT.76</div>
+                    </div>
+                </div>
+
+                <div class="qr-meta">
+                    Consulta generada el 18/11/2026 19:58:44                </div>
+            </section>
+
+            <footer class="qr-footer">
+                Validación digital oficial · Municipalidad Distrital de Puente Piedra
+            </footer>
+        </section>
+    </main>
+
+
+</body></html> 
